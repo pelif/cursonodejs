@@ -1,0 +1,19 @@
+version: '2'
+services: 
+    mysql: 
+        image: mysql:5.7
+        container_name: mysql57
+        ports: 
+            - "3306:3306"
+        environment: 
+            MYSQL_ROOT_PASSWORD: myrootsql
+            MYSQL_DATABASE: crud_node
+        networks: 
+            cursoNode: 
+                ipv4_address: 10.7.0.3
+networks: 
+    cursoNode:         
+        ipam:
+            config: 
+                - subnet: 10.7.0.0/16
+                  gateway: 10.7.0.1                

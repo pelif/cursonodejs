@@ -1,0 +1,26 @@
+{
+  "name": "init-node",
+  "version": "1.0.0",
+  "description": "Estudos iniciais de nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js --delay 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Iniciando",
+    "com",
+    "Nodejs"
+  ],
+  "author": "Felipe Daniel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "console-log-hello-world": "^1.0.3",
+    "express": "^4.17.1",
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

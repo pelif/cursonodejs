@@ -1,0 +1,37 @@
+html 
+    head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        link(rel="stylesheet", href="http://localhost:3000/assets/css/style.css")
+        title App Node.js
+    body
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            a.navbar-brand(href="#") App Nodejs
+            button.navbar-toggler(
+                type="button",
+                data-toggle="collapse",
+                data-target="#navbarNav",
+                aria-controls="navbarNav",
+                aria-expanded="false",
+                aria-label="Toggle navigation"
+            )
+                span.navbar-toggler-icon
+            div.collapse.navbar-collapse#navbarNav
+                ul.navbar-nav
+                    li.nav-item.active
+                        a.nav-link(href="#") Home
+                        span.sr-only (current)
+                    li.nav-item.dropdown
+                        a.nav-link.dropdown-toggle(
+                           href="#",
+                           id="navbarDropdownMenuLink", 
+                           role="button",
+                           data-toggle="dropdown",
+                           aria-haspopup="true",
+                           aria-expanded="false"
+                        ) Clientes
+                        div.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
+                            a.dropdown-item(href="/client") Consultar
+                            a.dropdown-item(href="/client/new") Novo
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js")
+        block content
