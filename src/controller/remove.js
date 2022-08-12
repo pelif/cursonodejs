@@ -8,8 +8,6 @@ module.exports = (req, res) => {
                 id: req.params.id
             }
         })
-        .then(() => console.log("DELETE OK"))
-        .catch((err) => {
-            console.log(err)
-        })
+        .then(() => res.redirect('/client?msg=5'))
+        .catch((err) => res.redirect('/client?msg=6'))
 }

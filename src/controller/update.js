@@ -8,5 +8,6 @@ module.exports = (req, res) => {
                 id: req.params.id
             }
         })
-        .then(() => console.log("UPDATE OK"))
+        .then(() => res.redirect('/client?msg=3'))
+        .catch((err) => res.redirect('/client?msg=4'))
 }

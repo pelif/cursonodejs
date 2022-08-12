@@ -3,5 +3,5 @@ include ./mixins/form
 
 block content 
     div.container.form-align-top.col-md-8        
-            form(action="/client/", method="POST")                
+            form(action="/client/" + client.id + "?_method=PUT", method="POST")                
                 +form(client)

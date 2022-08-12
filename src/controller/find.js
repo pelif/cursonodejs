@@ -5,7 +5,10 @@ module.exports = (req, res) => {
     Cliente
         .findAll()
         .then((clients) => {
-            console.log(clients)
+            return res.render('client_list', {
+                title: 'Lista de Clientes', 
+                clients: clients
+            })
         })
         .catch((err) => {
             console.log(err)
