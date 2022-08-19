@@ -3,18 +3,12 @@ extends ./main
 block content
     div.container
         h2 #{title}
-        if msg == 1
-            div.alert.alert-success Cliente Cadastrado com sucesso!
-        if msg == 2
-            div.alert.alert-danger Não foi possívle cadastrar o cliente! 
-        if msg == 3    
-            div.alert.alert-success Cliente Alterado com sucesso!
-        if msg == 4    
-            div.alert.alert-danger Não foi possível alterar o cliente! 
-        if msg == 5    
-            div.alert.alert-success Cliente Removido com sucesso!
-        if msg == 6    
-            div.alert.alert-danger Não foi possível remover o cliente!     
+        
+        if(flash.message)
+            //-if(flash.type === 2)
+                - var alert = 'danger';
+                p(class="alert alert-#{alert}") #{flash.message}
+            p(class=`alert alert-${flash.type}`) #{flash.message}    
 
         table.table.table-bordered
             thead
@@ -36,7 +30,10 @@ block content
                         td 
                             a(href="/client/edit/" + client.id, class="btn btn-info") Editar
                             form(
+                                id="formClient"
                                 method="POST" 
-                                action="/client/" + client.id + "?_method=DELETE", 
+                                action="/client/" + client.id + "/?_method=DELETE", 
                                 style="display:inline-block;")                                
-                                button.btn.btn-danger.ml-2(type="submit") Delete
+                                button.btn.btn-danger.ml-1(
+                                    type="submit", 
+                                    onclick="event.preventDefault();if(confirm('Você deseja realmente deletar este cliente?')){document.getElementById('formClient').submit();}") Delete
