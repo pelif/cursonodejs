@@ -3,9 +3,10 @@ extends ./main
 block content
     div.container
         h2 #{title}
+
         if(flash.message) 
             div(class=`alert alert-${flash.type}`) #{flash.message}
-            
+
         table.table.table-bordered
             thead
                 tr
@@ -26,7 +27,10 @@ block content
                         td 
                             a(href="/client/edit/" + client.id, class="btn btn-info") Editar
                             form(
+                                id="formClient"
                                 method="POST" 
-                                action="/client/" + client.id + "?_method=DELETE", 
+                                action="/client/" + client.id + "/?_method=DELETE", 
                                 style="display:inline-block;")                                
-                                button.btn.btn-danger.ml-2(type="submit") Delete
+                                button.btn.btn-danger.ml-1(
+                                    type="submit", 
+                                    onclick="event.preventDefault();if(confirm('Você deseja realmente deletar este cliente?')){document.getElementById('formClient').submit();}") Delete

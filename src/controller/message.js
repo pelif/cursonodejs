@@ -1,4 +1,5 @@
 module.exports = function(value) {
+
     res = { type: 'success' }; 
 
     if(value == 1) {
@@ -28,4 +29,5 @@ module.exports = function(value) {
         res.message = 'Não foi possível remover o cliente! '; 
     }
     return res;    
+
 }

@@ -12,7 +12,7 @@ module.exports = (req, res) => {
         .then((clients) => {
             return res.render('client_list', {
                 title: 'Lista de Clientes', 
-                clients: clients,
+                clients: clients, 
                 flash: result
             })
         })
