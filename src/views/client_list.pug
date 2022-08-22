@@ -3,19 +3,9 @@ extends ./main
 block content
     div.container
         h2 #{title}
-        if msg == 1
-            div.alert.alert-success Cliente Cadastrado com sucesso!
-        if msg == 2
-            div.alert.alert-danger Não foi possívle cadastrar o cliente! 
-        if msg == 3    
-            div.alert.alert-success Cliente Alterado com sucesso!
-        if msg == 4    
-            div.alert.alert-danger Não foi possível alterar o cliente! 
-        if msg == 5    
-            div.alert.alert-success Cliente Removido com sucesso!
-        if msg == 6    
-            div.alert.alert-danger Não foi possível remover o cliente!     
-
+        if(flash.message) 
+            div(class=`alert alert-${flash.type}`) #{flash.message}
+            
         table.table.table-bordered
             thead
                 tr
