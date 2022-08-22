@@ -5,10 +5,7 @@ block content
         h2 #{title}
         
         if(flash.message)
-            //-if(flash.type === 2)
-                - var alert = 'danger';
-                p(class="alert alert-#{alert}") #{flash.message}
-            p(class=`alert alert-${flash.type}`) #{flash.message}    
+            div(class=`alert alert-${flash.type}`) #{flash.message}    
 
         table.table.table-bordered
             thead
